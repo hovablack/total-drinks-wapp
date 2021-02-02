@@ -10,13 +10,17 @@ class ClientsController < ApplicationController
     end
 
     post "/clients" do
-        raise params.inspect
+        if valid_input
+            @client = Client.create(params)
+            redirect "/clients/#{@client.id}"
+        else
+            redirect '/'
+        end
     end
 
-
-#     get "/clients/:id" do
-#         erb :"/clients/show.html"
-#     end
+    get "/clients/:id" do
+        erb :"/clients/show.html"
+    end
 # 
 #     get "/clients/:id/edit" do
 #         erb :"/clients/edit.html"
