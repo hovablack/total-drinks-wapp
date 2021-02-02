@@ -1,1 +1,23 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<p class="text-center"><h1>Insert the form to create a new instance of your model.</h1></p>
+<div class="container">
+    <form class="register_form" action="/clients" method="POST">
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" name="username">
+            <div id="usernameHelp" class="form-text">Something unqiue.</div>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+        <button type="submit" class="btn btn-primary">Register</button>
+        <p class="message">Already Registered? <a href="/login">Login</a></p>
+        </div>
+    </form>
+</div>
