@@ -1,1 +1,36 @@
 <h1>Insert the form to create a new instance of your model.</h1>
+
+<form action="/drinks" method="POST">
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="name" id="name" class="col-form-label">Drink Name</label>
+        </div>
+        <div class="col-auto">
+            <input type="text" id="name" class="form-control" aria-describedby="nameHelpInline" name="name">
+        </div>
+    </div>
+    <br />
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="quantity" class="col-form-label">Quantity</label>
+        </div>
+        <div class="col-auto">
+            <input type="integer" id="quantity" class="form-control" aria-describedby="quantityHelpInline" name="quantity">
+        </div>
+    </div>
+    <br />
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="category" class="col-form-label">Category</label>
+        </div>
+        <div class="col-auto">
+            <select class="form-select" aria-label="Default select example" name="category">
+                <option value="Alcoholic">Alcoholic</option>
+                <option value="2Non-Alcoholic">Non-Alcoholic</option>
+            </select>
+        </div>
+    </div>
+    <br />
+    <a class="btn btn-secondary btn-lg" href="/clients/<%= current_client.id %>">Cancel</a>
+    <button type="submit" class="btn btn-primary btn-lg">Place Order</button>
+</form>

@@ -39,6 +39,14 @@ class ApplicationController < Sinatra::Base
         def found_client_name
             @client = Client.find_by(username: params[:username])
         end
+
+#         def content
+#             params[:name] != "" && params[:quantity] != ""
+#         end
+# 
+#         def authetication_required
+#             redirect "/" if !logged_in?
+#         end
     end
 
 end
