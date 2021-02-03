@@ -1,1 +1,5 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h1>This is the show page for an individual instance of your model. <%= session[:client_id] %></h1>
+<div class="badge bg-primary text-wrap" style="width: 8rem;">
+  <p class="text-capitalize"><%= @client.username %></p>
+  <p class="text-lowercase"><%= @client.email %></p>
+</div>
