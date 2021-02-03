@@ -21,7 +21,6 @@ class ClientsController < ApplicationController
     post "/login" do
         found_client_name
         if @client && @client.authenticate(params[:password])
-            binding.pry
             session[:client_id] = @client.id
             redirect "/clients/#{@client.id}"
         else

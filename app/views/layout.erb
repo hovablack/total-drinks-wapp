@@ -6,8 +6,31 @@
         <link rel="stylesheet" href="/stylesheets/main.css">
         <title>Total Drinks</title>
     </head>
-     <body>
-        <%= yield %>
+    <body>
+        <div class="container-fluid">
+            <% if logged_in? %>
+                <nav class="navbar navbar-light bg-light">
+                    <div class="container-fluid">
+                        Logged in as: Client <%= rand(1...999999) %>
+                        <a class="nav-link" href="/drinks/new">New Drink</a>
+                        <a class="nav-link" href="/drinks">My Drinks</a>
+                        <a class="nav-link" href="/clients/<%= current_client.id %>"><%= current_client.username %></a>
+                        <a class="nav-link" href="/clients/:id/account">Settings</a>
+                        <a class="nav-link" href="/logout">Logout</a>
+                        <a class="nav-link" href="https://www.timeanddate.com/time/internettime.html"><%= Time.now %></a>
+                    </div>
+                </nav>
+            <% else %>
+                <nav class="navbar navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="nav-link" href="/">Home</a> |
+                        <a class="nav-link" href="/login">Login</a> ||
+                        <a class="nav-link" href="https://www.timeanddate.com/time/internettime.html"><%= Time.new %></a>
+                    </div>
+                 </nav>
+            <% end %>
+            <%= yield %>
+        </div>
         <script src="/javascripts/bootstrap.bundle.min.js"></script>
     </body>
 </html>
