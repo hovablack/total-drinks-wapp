@@ -1,4 +1,7 @@
 class ClientsController < ApplicationController
+    before "/clients/*" do
+        authetication_required
+    end
 
     get "/register" do
         erb :"/clients/new.html"
@@ -33,8 +36,19 @@ class ClientsController < ApplicationController
         erb :"/clients/show.html"
     end
 
+    private
 
+    def valid_input
+        params[:username] != "" && params[:email] != "" && params[:password] != ""
+    end
 
+    def found_client_id
+        @client = Client.find_by(id: params[:id])
+    end
+
+    def found_client_name
+        @client = Client.find_by(username: params[:username])
+    end
 
     
     # 
