@@ -26,6 +26,10 @@ class DrinksController < ApplicationController
         erb :"/drinks/show.html"
     end
 
+    get '/drinks/:id/edit' do
+        erb :"/drinks/edit.html"
+    end
+
     delete "/drinks/:id/delete" do
         redirect "/drinks"
     end
